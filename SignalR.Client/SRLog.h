@@ -23,13 +23,16 @@
 #if __has_include("DDLog.h")
 #import <CocoaLumberjack/DDLog.h>
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+//static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static int ddLogLevel = LOG_LEVEL_OFF;
+
+
 
 #if defined( LOG_ASYNC_ENABLED )
     #undef LOG_ASYNC_ENABLED
     #define LOG_ASYNC_ENABLED NO
 #endif
-
+/*
 #define SRLogError(frmt, ...)   LOG_OBJC_MAYBE(LOG_ASYNC_ERROR,   LOG_LEVEL_DEF, LOG_FLAG_ERROR,   0, frmt, ##__VA_ARGS__)
 #define SRLogWarn(frmt, ...)    LOG_OBJC_MAYBE(LOG_ASYNC_WARN,    LOG_LEVEL_DEF, LOG_FLAG_WARN,    0, frmt, ##__VA_ARGS__)
 #define SRLogInfo(frmt, ...)    LOG_OBJC_MAYBE(LOG_ASYNC_INFO,    LOG_LEVEL_DEF, LOG_FLAG_INFO,    0, frmt, ##__VA_ARGS__)
@@ -43,7 +46,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #define SRLogInfo(frmt, ...)       do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 #define SRLogDebug(frmt, ...)      do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 #define SRLogVerbose(frmt, ...)    do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
-
+*/
 #endif
 
 #define SRLogPrefixedError(type, frmt, ...) SRLogError(@"%@:\t%@", type, [NSString stringWithFormat:frmt, ##__VA_ARGS__]);

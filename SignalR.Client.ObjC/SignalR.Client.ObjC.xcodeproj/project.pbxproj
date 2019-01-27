@@ -522,12 +522,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39302A051C6974C20061C6B5 /* Build configuration list for PBXNativeTarget "SignalR.Client.OSX" */;
 			buildPhases = (
+				F7FDA0F635F0DB6369B05196 /* [CP] Check Pods Manifest.lock */,
 				BE773CA6D603623DBCDFD6AF /* Check Pods Manifest.lock */,
 				393029EF1C6974C10061C6B5 /* Sources */,
 				393029F01C6974C10061C6B5 /* Frameworks */,
 				393029F11C6974C10061C6B5 /* Headers */,
 				393029F21C6974C10061C6B5 /* Resources */,
-				7C5BAF419D1DB75581A41B87 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -542,12 +542,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39302A081C6974C20061C6B5 /* Build configuration list for PBXNativeTarget "SignalR.Client.OSXTests" */;
 			buildPhases = (
+				CAAC9C56A879665881224FAE /* [CP] Check Pods Manifest.lock */,
 				537C4819A81E84FE2982C1CF /* Check Pods Manifest.lock */,
 				393029F91C6974C20061C6B5 /* Sources */,
 				393029FA1C6974C20061C6B5 /* Frameworks */,
 				393029FB1C6974C20061C6B5 /* Resources */,
 				67E90B84652BAD667E4611D1 /* Embed Pods Frameworks */,
-				0B029DDB5BC07F36BE28C47C /* Copy Pods Resources */,
+				BA4654811C93601BA1F45237 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -563,12 +564,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39302A3F1C6978AC0061C6B5 /* Build configuration list for PBXNativeTarget "SignalR.Client.iOS" */;
 			buildPhases = (
+				C4AEF6125799434E5D72E1B0 /* [CP] Check Pods Manifest.lock */,
 				42E081C85DE4F4916D0F3D75 /* Check Pods Manifest.lock */,
 				39302A291C6978AB0061C6B5 /* Sources */,
 				39302A2A1C6978AB0061C6B5 /* Frameworks */,
 				39302A2B1C6978AB0061C6B5 /* Headers */,
 				39302A2C1C6978AB0061C6B5 /* Resources */,
-				796268F885EFEC8F1356854A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -583,12 +584,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39302A421C6978AC0061C6B5 /* Build configuration list for PBXNativeTarget "SignalR.Client.iOSTests" */;
 			buildPhases = (
+				0EE4BD1E2578B3E0D2B1D90A /* [CP] Check Pods Manifest.lock */,
 				21C56E6B6FDFA0220435E7AD /* Check Pods Manifest.lock */,
 				39302A331C6978AC0061C6B5 /* Sources */,
 				39302A341C6978AC0061C6B5 /* Frameworks */,
 				39302A351C6978AC0061C6B5 /* Resources */,
 				2AC719B5534D658A6E1038BA /* Embed Pods Frameworks */,
-				1A11AFB25C13B6568AF7E084 /* Copy Pods Resources */,
+				2CC3E3C0935869E45A497802 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -676,34 +678,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B029DDB5BC07F36BE28C47C /* Copy Pods Resources */ = {
+		0EE4BD1E2578B3E0D2B1D90A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignalR.Client.iOS-SignalR.Client.iOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1A11AFB25C13B6568AF7E084 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.iOS-SignalR.Client.iOSTests/Pods-SignalR.Client.iOS-SignalR.Client.iOSTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		21C56E6B6FDFA0220435E7AD /* Check Pods Manifest.lock */ = {
@@ -730,6 +720,28 @@
 			);
 			name = "Embed Pods Frameworks";
 			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.iOS-SignalR.Client.iOSTests/Pods-SignalR.Client.iOS-SignalR.Client.iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CC3E3C0935869E45A497802 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.iOS-SignalR.Client.iOSTests/Pods-SignalR.Client.iOS-SignalR.Client.iOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket-iOS/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock-iOS/OCMock.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -781,34 +793,26 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		796268F885EFEC8F1356854A /* Copy Pods Resources */ = {
+		BA4654811C93601BA1F45237 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking-93a4f461/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket-macOS/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock-macOS/OCMock.framework",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.iOS/Pods-SignalR.Client.iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7C5BAF419D1DB75581A41B87 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.OSX/Pods-SignalR.Client.OSX-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BE773CA6D603623DBCDFD6AF /* Check Pods Manifest.lock */ = {
@@ -824,6 +828,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4AEF6125799434E5D72E1B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignalR.Client.iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAAC9C56A879665881224FAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignalR.Client.OSX-SignalR.Client.OSXTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7FDA0F635F0DB6369B05196 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignalR.Client.OSX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
